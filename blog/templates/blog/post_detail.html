@@ -1,9 +1,11 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+        <div class="card">
     <div class="post">
+            <p>{{ post.author}}</p>
         {% if post.published_date %}
-            <div class="date">
+            <div class="post-date">
                 {{ post.published_date }}
             </div>
         {% endif %}
@@ -12,5 +14,20 @@
 {% endif %}
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    </div>
+{% endblock %}
+
+
+{% block contentr %}
+<div class="content-section">
+ <ul>
+  <h4>Latest Posts</h4>
+    {% for post in postl %}
+
+      <li><a class="post-title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></li>
+        <p class="post-date">{{ post.published_date }}</p>
+
+    {% endfor %}
     </div>
 {% endblock %}

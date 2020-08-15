@@ -6,12 +6,18 @@ from .forms import PostForm
 from django.shortcuts import redirect
 
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    context={
+        'posts': Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date'),
+        'postsl': Post.objects.all().order_by('-published_date')[:5]
+    }
+    return render(request,'blog/post_list.html', context)
     
 def post_detail(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
+  context={
+    'post' : get_object_or_404(Post, pk=pk),
+    'postl': Post.objects.all().order_by('-published_date')[:5]
+  }
+  return render(request, 'blog/post_detail.html',  context)
     
 def post_new(request):
     if request.method == "POST":
