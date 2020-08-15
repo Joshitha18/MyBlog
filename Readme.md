@@ -1,5 +1,5 @@
 # MyBlog
-MyBlog is a basic blogging application to post my blogs.
+MyBlog is a basic blogging application made using Django.
 
 ## Tech Stack
 - **Frontend:** HTML/CSS
