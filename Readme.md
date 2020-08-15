@@ -6,7 +6,7 @@ MyBlog is a basic blogging application to post my blogs
 - **Backend:** Django
 
 
-## Quick Start :
+[live working demo](http://joshitha.pythonanywhere.com/)
 
 
 #### Setting up Project
