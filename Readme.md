@@ -1,5 +1,5 @@
 # MyBlog
-MyBlog is a basic blogging application to post my blogs. [live working demo](http://joshitha.pythonanywhere.com/)
+MyBlog is a basic blogging application to post my blogs.
 
 ## Tech Stack
 - **Frontend:** HTML/CSS
